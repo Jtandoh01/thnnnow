@@ -19,6 +19,7 @@ const { MONGODB_URI } = process.env; // To retrieve environment variable to verc
   mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    
   })
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('Error connecting to MongoDB', err));
@@ -58,7 +59,7 @@ app.get('/students/:id', async (req, res) => {
   });
 
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 // Start server
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
